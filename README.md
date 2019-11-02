@@ -16,6 +16,7 @@ exports.run = async (client, message, args) => {
   const url = `https://www.instagram.com/${args.join("_")}`;
   instagram(url)
     .then(data => {
+    if(!data.fullName) return message.channel.send(':x: Not Found')
       console.log(`Full name is: ${data.fullName}`);
 
       const embed = new Discord.RichEmbed()
@@ -44,7 +45,7 @@ exports.run = async (client, message, args) => {
     .catch(e => {
       // Error will trigger if the account link provided is false.
       console.error(e);
-      message.channel.send(`ERROR \n \`\`\`${e}\`\`\``);
+      message.channel.send(`:x: Not Found!`);
     });
     
   
