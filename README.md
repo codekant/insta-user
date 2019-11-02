@@ -12,7 +12,7 @@ const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
   if (!args) return message.channel.send(":x: Give a Username!");
-  const instagram = require("user-instagram");
+  const instagram = require("insta-user");
   const url = `https://www.instagram.com/${args.join("_")}`;
   instagram(url)
     .then(data => {
