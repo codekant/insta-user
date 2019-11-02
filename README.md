@@ -53,5 +53,5 @@ exports.run = async (client, message, args) => {
 exports.help = {
   name: "instagram",
   aliases: ["ig"]
-};```
-Simple Code.
+};
+
